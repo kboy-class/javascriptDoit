@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <script src="DateToUnit.js"></script>
+</head>
+<body>
+<div>当前时间：<span class="a"></span></div>
+<div>默认格式：<span class="a"></span></div>
+<div>默认格式(毫秒)：<span class="a"></span></div>
+<div>YY-MM-DD：<span class="a"></span></div>
+<div>YY-MM-DD h:m:s:ms：<span class="a"></span></div>
+<div>MM/DD/YY：<span class="a"></span></div>
+<div>MM/DD/YY h:m:s:ms：<span class="a"></span></div>
+</body>
+<script>
+	var spans = document.getElementsByTagName('span');
+	setInterval(function(){
+
+		var n = new Date();
+		var times = n.getTime();
+		spans[0].innerHTML = Jk.getCurrentDate();
+		spans[1].innerHTML = Jk.UnitToDate(times);
+		spans[2].innerHTML = Jk.UnitToDate(times,'',true);
+		spans[3].innerHTML = Jk.UnitToDate(times,'YY-MM-DD');
+		spans[4].innerHTML = Jk.UnitToDate(times,'YY-MM-DD h:m:s:ms');
+		spans[5].innerHTML = Jk.UnitToDate(times,'MM/DD/YY');
+		spans[6].innerHTML = Jk.UnitToDate(times,'MM/DD/YY h:m:s:ms');
+
+
+	},1000);
+	console.log(Jk.DateToUnit('2017-02-03',true));//输出格式2017-02-03的毫秒数
+	var l = new Date();
+	var ts = l.getTime();
+	var txt = Jk.UnitToDate(ts,'',true);
+	console.log(Jk.DateToUnit(txt,true));//输出如2017年12月23日 12:12:12:300 格式的毫秒数
+	console.log(Jk.DateToUnit('2017-02-03 12:12:12:300',true));//输出毫秒数
+
+</script>
+</html>
