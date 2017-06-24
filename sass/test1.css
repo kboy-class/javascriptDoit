@@ -1,0 +1,19 @@
+div {
+  color: #1875e7; }
+
+.text {
+  background: #1875e7; }
+
+.test {
+  color: #1875e7; }
+
+.layer, .outer {
+  margin-left: 25px; }
+  .layer .page_1190, .outer .page_1190 {
+    width: 1200px;
+    margin: 0 auto; }
+
+.outer {
+  font-size: 12px; }
+
+/*# sourceMappingURL=test1.css.map */

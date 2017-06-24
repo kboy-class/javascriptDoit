@@ -1,0 +1,60 @@
+$blue:#1875e7;
+div {color:$blue;}
+.text {
+	background:$blue;
+}
+.test {
+	color:$blue;
+}
+
+$ml:margin-left;
+$p25:25px;
+$w:width;
+$m:margin;
+$bgc:background-color;
+.layer {
+	#{$ml}:$p25;
+	.page_1190 {
+		#{$w}:1190px + 10px;
+		#{$m}: 0 auto;
+	}
+}
+.outer {
+	@extend .layer;
+	font-size: 12px;
+}
+p {
+	// @if 1+1 == 2{
+	// 	border:1px solid $blue;
+	// }
+	@if 5 > 3 {
+		#{$ml}:$p25;
+	}
+}
+
+@for $i from 1 to 10 {
+	.border-#{$i} {
+		border: #{$i}px solid blue;
+	}
+}
+
+$i: 6;
+@while $i > 0 {
+	.item-#{$i} { 
+		width:2em * $i; 
+	}
+	$i: $i - 2;
+}
+
+@each $item in a,b,c,d {
+	.item-#{$item} {
+		background-image:url("../image/#{$item}.png");
+	}
+}
+
+@function f($s) {
+	@return $s + 2;
+}
+#s {
+	width: f(5px);
+}
